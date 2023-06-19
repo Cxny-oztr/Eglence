@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rasgele Komik Resimler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="image-container">
+                    <img id="random-image" src="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var images = [
+            "resim1.jpg",
+            "resim2.jpeg",
+            "resim3.jpeg",
+            "resim4.gif",
+            "resim5.jpeg",
+        ];
+
+        function getRandomImage() {
+            var randomIndex = Math.floor(Math.random() * images.length);
+            var randomImage = images[randomIndex];
+            return randomImage;
+        }
+
+        window.onload = function() {
+            var randomImageElement = document.getElementById("random-image");
+            randomImageElement.src = getRandomImage();
+        };
+    </script>
+</body>
+</html>
